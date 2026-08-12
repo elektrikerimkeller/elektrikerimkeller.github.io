@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anmelden — Elektrik Studios</title>
+
+    <meta
+        name="description"
+        content="Melde dich mit deinem Discord-Account bei Elektrik Studios an."
+    >
+
+    <style>
+        :root {
+            --bg: #080a0f;
+            --surface: #11141b;
+            --border: #272d39;
+
+            --text: #f5f7fa;
+            --muted: #9da5b3;
+
+            --discord: #5865f2;
+            --discord-hover: #4752c4;
+
+            --max-width: 520px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            min-height: 100%;
+        }
+
+        body {
+            margin: 0;
+
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(88, 101, 242, .20),
+                    transparent 45%
+                ),
+                var(--bg);
+
+            color: var(--text);
+
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+
+            padding: 24px;
+        }
+
+        .card {
+            background: rgba(17, 20, 27, .96);
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            padding: 40px;
+
+            text-align: center;
+
+            box-shadow:
+                0 25px 80px rgba(0, 0, 0, .35);
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+
+            margin: 0 auto 24px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 20px;
+
+            background: var(--discord);
+
+            color: white;
+
+            font-size: 28px;
+            font-weight: 900;
+
+            box-shadow:
+                0 10px 35px rgba(88, 101, 242, .25);
+        }
+
+        .eyebrow {
+            color: #9aa7ff;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            letter-spacing: .12em;
+
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin: 0 0 12px;
+
+            font-size: 32px;
+
+            line-height: 1.15;
+
+            letter-spacing: -.04em;
+        }
+
+        .description {
+            margin: 0 auto;
+
+            max-width: 390px;
+
+            color: var(--muted);
+
+            font-size: 15px;
+
+            line-height: 1.65;
+        }
+
+        .login-button {
+            width: 100%;
+
+            margin-top: 30px;
+
+            padding: 14px 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 11px;
+
+            border: 0;
+            border-radius: 10px;
+
+            background: var(--discord);
+
+            color: white;
+
+            font-size: 15px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition:
+                background .2s ease,
+                transform .2s ease;
+        }
+
+        .login-button:hover {
+            background: var(--discord-hover);
+
+            transform: translateY(-1px);
+        }
+
+        .discord-icon {
+            width: 21px;
+            height: 21px;
+
+            fill: currentColor;
+        }
+
+        .info {
+            margin-top: 22px;
+
+            padding: 14px 16px;
+
+            border-radius: 9px;
+
+            background: rgba(255,255,255,.025);
+
+            border: 1px solid rgba(255,255,255,.05);
+
+            color: #858d9b;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+        }
+
+        .info strong {
+            color: #cdd2da;
+        }
+
+        .links {
+            margin-top: 24px;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 18px;
+
+            font-size: 12px;
+        }
+
+        .links a {
+            color: #858d9b;
+
+            text-decoration: none;
+        }
+
+        .links a:hover {
+            color: white;
+
+            text-decoration: underline;
+        }
+
+        .back {
+            display: inline-block;
+
+            margin-top: 22px;
+
+            color: #858d9b;
+
+            font-size: 13px;
+        }
+
+        .back:hover {
+            color: white;
+        }
+
+        @media (max-width: 520px) {
+            .card {
+                padding: 30px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <main class="card">
+
+        <div class="logo">
+            E
+        </div>
+
+        <div class="eyebrow">
+            Elektrik Studios
+        </div>
+
+        <h1>
+            Mit Discord anmelden
+        </h1>
+
+        <p class="description">
+            Melde dich mit deinem Discord-Account an, um auf
+            die Funktionen von Elektrik Studios und das
+            zugehörige Dashboard zuzugreifen.
+        </p>
+
+
+        <button
+            class="login-button"
+            onclick="loginWithDiscord()"
+        >
+
+            <!-- Discord Icon -->
+            <svg
+                class="discord-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+            >
+                <path d="M19.54 5.09A16.18 16.18 0 0 0 15.56 4l-.49 1a14.8 14.8 0 0 0-6.14 0l-.49-1a16.18 16.18 0 0 0-3.98 1.09C1.93 8.15 1.25 12.7 1.59 17.19A16.35 16.35 0 0 0 6.5 20l1.19-1.64c-.65-.24-1.27-.54-1.85-.9l.45-.34c3.57 1.67 7.43 1.67 10.96 0l.46.34c-.59.36-1.21.66-1.86.9L17.04 20a16.3 16.3 0 0 0 4.91-2.81c.4-5.21-.68-9.72-2.41-12.1ZM8.52 15.23c-1.07 0-1.95-.98-1.95-2.18s.86-2.19 1.95-2.19c1.1 0 1.96.99 1.95 2.19 0 1.2-.86 2.18-1.95 2.18Zm6.96 0c-1.07 0-1.95-.98-1.95-2.18s.86-2.19 1.95-2.19c1.1 0 1.96.99 1.95 2.19 0 1.2-.86 2.18-1.95 2.18Z"/>
+            </svg>
+
+            Mit Discord anmelden
+
+        </button>
+
+
+        <div class="info">
+
+            <strong>Was passiert bei der Anmeldung?</strong>
+            <br>
+
+            Du wirst zu Discord weitergeleitet und kannst dort
+            die Autorisierung bestätigen. Für die Anmeldung können
+            deine Discord-ID und die von Discord bereitgestellte
+            E-Mail-Adresse verarbeitet werden.
+
+        </div>
+
+
+        <div class="links">
+
+            <a href="/legal/privacy/">
+                Privacy Policy
+            </a>
+
+            <a href="/legal/tos/">
+                Terms of Service
+            </a>
+
+        </div>
+
+
+        <a
+            class="back"
+            href="/"
+        >
+            ← Zurück zu Elektrik Studios
+        </a>
+
+    </main>
+
+</div>
+
+
+
+<script>
+    function loginWithDiscord() {
+
+        const discordOAuthURL =
+            "https://discord.com/oauth2/authorize" +
+            "?client_id=1247453602058866769" +
+            "&response_type=code" +
+            "&redirect_uri=" +
+            encodeURIComponent(
+                "https://elektrikerimkellersystem.netlify.app/succes"
+            ) +
+            "&integration_type=1" +
+            "&scope=" +
+            encodeURIComponent(
+                "connections email identify applications.commands"
+            );
+
+        window.location.href = discordOAuthURL;
+    }
+</script>
+
+</body>
+</html>
