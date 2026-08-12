@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Elektrik Studios — Digital Development Studio</title>
+
+    <meta
+        name="description"
+        content="Elektrik Studios — Digital Development Studio für Discord Bots, Webentwicklung, Updates und digitale Projekte."
+    >
+
+    <style>
+        :root {
+            --bg: #080a0f;
+            --surface: #10131a;
+            --surface-2: #151923;
+            --border: #252b38;
+
+            --text: #f5f7fa;
+            --muted: #9da5b3;
+
+            --accent: #5865f2;
+            --accent-hover: #4752c4;
+
+            --green: #57f287;
+
+            --max-width: 1100px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background:
+                radial-gradient(
+                    circle at 50% -10%,
+                    rgba(88, 101, 242, .18),
+                    transparent 40%
+                ),
+                var(--bg);
+
+            color: var(--text);
+
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
+            background: rgba(8, 10, 15, .82);
+            backdrop-filter: blur(16px);
+
+            border-bottom: 1px solid rgba(255,255,255,.06);
+        }
+
+        nav {
+            max-width: var(--max-width);
+            margin: auto;
+
+            padding: 16px 24px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            font-weight: 800;
+            letter-spacing: -.03em;
+        }
+
+        .logo-icon {
+            width: 34px;
+            height: 34px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 10px;
+
+            background: var(--accent);
+
+            font-weight: 900;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 6px;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+
+            padding: 8px 12px;
+
+            border-radius: 8px;
+
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: white;
+            background: var(--surface);
+        }
+
+        .hero {
+            max-width: 900px;
+            margin: auto;
+
+            padding: 130px 24px 120px;
+
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+
+            padding: 7px 13px;
+
+            border-radius: 999px;
+
+            background: rgba(88,101,242,.12);
+            border: 1px solid rgba(88,101,242,.28);
+
+            color: #aeb6ff;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            margin-bottom: 25px;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: var(--green);
+            box-shadow: 0 0 10px rgba(87,242,135,.5);
+        }
+
+        h1 {
+            margin: 0;
+
+            font-size: clamp(44px, 8vw, 82px);
+
+            line-height: 1;
+
+            letter-spacing: -.06em;
+        }
+
+        .gradient {
+            background: linear-gradient(
+                135deg,
+                #ffffff 20%,
+                #9aa7ff 100%
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        .hero p {
+            max-width: 700px;
+
+            margin: 28px auto 0;
+
+            color: var(--muted);
+
+            font-size: 19px;
+        }
+
+        .buttons {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            margin-top: 34px;
+
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 12px 18px;
+
+            border-radius: 9px;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            border: 1px solid var(--border);
+
+            transition: .2s ease;
+        }
+
+        .button.primary {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        .button.primary:hover {
+            background: var(--accent-hover);
+        }
+
+        .button.secondary {
+            background: var(--surface);
+            color: #d7dbe3;
+        }
+
+        .button.secondary:hover {
+            background: var(--surface-2);
+            border-color: #343b4b;
+        }
+
+        main {
+            max-width: var(--max-width);
+
+            margin: auto;
+
+            padding: 0 24px 100px;
+        }
+
+        section {
+            margin-bottom: 100px;
+        }
+
+        .section-heading {
+            margin-bottom: 30px;
+        }
+
+        .eyebrow {
+            color: #8f9aff;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            letter-spacing: .12em;
+
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            margin: 0;
+
+            font-size: 34px;
+
+            letter-spacing: -.04em;
+        }
+
+        .section-description {
+            max-width: 650px;
+
+            color: var(--muted);
+
+            margin-top: 10px;
+        }
+
+        .about {
+            display: grid;
+
+            grid-template-columns: 1.2fr .8fr;
+
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+
+            border-radius: 15px;
+
+            padding: 28px;
+        }
+
+        .card h3 {
+            margin: 0 0 10px;
+
+            font-size: 20px;
+        }
+
+        .card p {
+            margin: 0;
+
+            color: var(--muted);
+        }
+
+        .services {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 14px;
+        }
+
+        .service {
+            padding: 25px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+
+            border-radius: 13px;
+        }
+
+        .service-icon {
+            width: 42px;
+            height: 42px;
+
+            display: grid;
+            place-items: center;
+
+            margin-bottom: 18px;
+
+            border-radius: 10px;
+
+            background: rgba(88,101,242,.12);
+
+            color: #aeb6ff;
+
+            font-size: 20px;
+        }
+
+        .service h3 {
+            margin: 0 0 7px;
+            font-size: 18px;
+        }
+
+        .service p {
+            margin: 0;
+
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+        .projects {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 14px;
+        }
+
+        .project {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            padding: 21px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+            transition: .2s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-2px);
+
+            border-color: #343c4d;
+
+            background: var(--surface-2);
+        }
+
+        .project-name {
+            font-weight: 700;
+        }
+
+        .project-url {
+            color: var(--muted);
+
+            font-size: 12px;
+
+            margin-top: 3px;
+        }
+
+        .arrow {
+            color: #858fa1;
+
+            font-size: 18px;
+        }
+
+        .cta {
+            text-align: center;
+
+            padding: 60px 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(88,101,242,.15),
+                    rgba(88,101,242,.03)
+                );
+
+            border: 1px solid rgba(88,101,242,.25);
+
+            border-radius: 18px;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+        }
+
+        .cta p {
+            max-width: 600px;
+
+            margin: 12px auto 25px;
+
+            color: var(--muted);
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+
+            padding: 35px 24px;
+
+            color: #737b89;
+
+            font-size: 13px;
+        }
+
+        .footer-inner {
+            max-width: var(--max-width);
+
+            margin: auto;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        @media (max-width: 800px) {
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hero {
+                padding-top: 80px;
+            }
+
+            .nav-links {
+                width: 100%;
+            }
+
+            .nav-links a {
+                padding-left: 0;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+
+        <a href="/" class="logo">
+            <span class="logo-icon">E</span>
+            Elektrik Studios
+        </a>
+
+        <div class="nav-links">
+            <a href="#about">Über uns</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projekte</a>
+            <a href="/legal/privacy/">Privacy</a>
+            <a href="/legal/tos/">Terms</a>
+        </div>
+
+    </nav>
+</header>
+
+
+<section class="hero">
+
+    <div class="badge">
+        <span class="status-dot"></span>
+        Digital Development Studio
+    </div>
+
+    <h1>
+        Wir bauen
+        <span class="gradient">digitale Projekte.</span>
+    </h1>
+
+    <p>
+        Elektrik Studios ist ein digitales Development Studio,
+        das Discord Bots, Webseiten und andere digitale Projekte
+        entwickelt, betreibt und kontinuierlich weiterentwickelt.
+    </p>
+
+    <div class="buttons">
+
+        <a
+            href="#projects"
+            class="button primary"
+        >
+            Unsere Projekte
+        </a>
+
+        <a
+            href="#about"
+            class="button secondary"
+        >
+            Mehr über Elektrik Studios
+        </a>
+
+    </div>
+
+</section>
+
+
+<main>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                Über uns
+            </div>
+
+            <h2>
+                Elektrik Studios
+            </h2>
+
+            <p class="section-description">
+                Ein digitales Development Studio für moderne
+                Web- und Discord-Projekte.
+            </p>
+
+        </div>
+
+
+        <div class="about">
+
+            <div class="card">
+
+                <h3>
+                    Development & Innovation
+                </h3>
+
+                <p>
+                    Wir entwickeln und betreiben verschiedene
+                    digitale Plattformen, Webseiten und Discord
+                    Bots. Dabei kümmern wir uns nicht nur um die
+                    Entwicklung, sondern auch um Updates,
+                    Wartung und kontinuierliche Verbesserungen.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Discord Community
+                </h3>
+
+                <p>
+                    Zu Elektrik Studios gehört auch eine eigene
+                    Discord-Community, in der Projekte, Updates
+                    und Entwicklungen geteilt werden.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section id="services">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                Was wir machen
+            </div>
+
+            <h2>
+                Development Services
+            </h2>
+
+            <p class="section-description">
+                Von Discord Bots bis zu modernen Webprojekten —
+                wir entwickeln digitale Lösungen und halten sie
+                laufend aktuell.
+            </p>
+
+        </div>
+
+
+        <div class="services">
+
+            <div class="service">
+
+                <div class="service-icon">
+                    ◈
+                </div>
+
+                <h3>
+                    Discord Bots
+                </h3>
+
+                <p>
+                    Entwicklung und Weiterentwicklung von
+                    Discord Bots, Systemen und Integrationen.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    ◫
+                </div>
+
+                <h3>
+                    Web Development
+                </h3>
+
+                <p>
+                    Entwicklung und Betrieb von Webseiten,
+                    Dashboards und digitalen Plattformen.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    ↻
+                </div>
+
+                <h3>
+                    Updates & Maintenance
+                </h3>
+
+                <p>
+                    Laufende Updates, Verbesserungen,
+                    Fehlerbehebungen und technische Wartung
+                    unserer Projekte.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                Unsere Projekte
+            </div>
+
+            <h2>
+                Digitale Plattformen
+            </h2>
+
+            <p class="section-description">
+                Eine Auswahl unserer aktuell betriebenen
+                Webseiten und Projekte.
+            </p>
+
+        </div>
+
+
+        <div class="projects">
+
+
+            <a
+                href="https://elektrikerimkeller.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project"
+            >
+
+                <div>
+
+                    <div class="project-name">
+                        Elektriker im Keller
+                    </div>
+
+                    <div class="project-url">
+                        elektrikerimkeller.netlify.app
+                    </div>
+
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+            </a>
+
+
+            <a
+                href="https://elektrikerimkellersystem.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project"
+            >
+
+                <div>
+
+                    <div class="project-name">
+                        Elektriker im Keller System
+                    </div>
+
+                    <div class="project-url">
+                        elektrikerimkellersystem.netlify.app
+                    </div>
+
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+            </a>
+
+
+            <a
+                href="https://elektrikerimkellerstestserver.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project"
+            >
+
+                <div>
+
+                    <div class="project-name">
+                        Elektriker im Keller Testserver
+                    </div>
+
+                    <div class="project-url">
+                        elektrikerimkellerstestserver.netlify.app
+                    </div>
+
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+            </a>
+
+
+            <a
+                href="https://elektrikerimkellerprojekte.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project"
+            >
+
+                <div>
+
+                    <div class="project-name">
+                        Elektriker im Keller Projekte
+                    </div>
+
+                    <div class="project-url">
+                        elektrikerimkellerprojekte.netlify.app
+                    </div>
+
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+            </a>
+
+
+            <a
+                href="https://elektrikstudios.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project"
+            >
+
+                <div>
+
+                    <div class="project-name">
+                        Elektrik Studios
+                    </div>
+
+                    <div class="project-url">
+                        elektrikstudios.netlify.app
+                    </div>
+
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+            </a>
+
+
+            <a
+                href="https://eventstudios.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project"
+            >
+
+                <div>
+
+                    <div class="project-name">
+                        Event Studios
+                    </div>
+
+                    <div class="project-url">
+                        eventstudios.netlify.app
+                    </div>
+
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section>
+
+        <div class="cta">
+
+            <h2>
+                Teil unserer Community
+            </h2>
+
+            <p>
+                Elektrik Studios hat auch eine eigene Discord-
+                Community. Dort findest du Neuigkeiten,
+                Projekt-Updates und weitere Informationen
+                zu unseren Entwicklungen.
+            </p>
+
+            <!--
+                DISCORD-LINK HIER EINTRAGEN
+            -->
+
+            <a
+                href="[DISCORD-SERVER-LINK]"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button primary"
+            >
+                Discord Server
+            </a>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div>
+            © 2026 Elektrik Studios
+        </div>
+
+        <div class="footer-links">
+
+            <a href="/legal/privacy/">
+                Privacy Policy
+            </a>
+
+            <a href="/legal/tos/">
+                Terms of Service
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
