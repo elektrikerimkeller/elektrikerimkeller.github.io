@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>System Bot 2 — Anmeldung</title>
+
+    <meta
+        name="description"
+        content="Melde dich mit deinem Discord-Account bei System Bot an."
+    >
+
+    <style>
+        :root {
+            --bg: #07090e;
+            --surface: #10131a;
+            --surface-hover: #151923;
+            --border: #252b38;
+
+            --text: #f7f8fa;
+            --muted: #9da5b3;
+
+            --accent: #5865f2;
+            --accent-hover: #4752c4;
+
+            --success: #57f287;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            min-height: 100%;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 24px;
+
+            background:
+                radial-gradient(
+                    circle at 50% -10%,
+                    rgba(88, 101, 242, .22),
+                    transparent 42%
+                ),
+                radial-gradient(
+                    circle at 100% 100%,
+                    rgba(88, 101, 242, .07),
+                    transparent 35%
+                ),
+                var(--bg);
+
+            color: var(--text);
+
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 480px;
+        }
+
+        .brand {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            gap: 9px;
+
+            margin-bottom: 20px;
+
+            color: #dfe2e8;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            letter-spacing: -.01em;
+        }
+
+        .brand-icon {
+            width: 28px;
+            height: 28px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 8px;
+
+            background: var(--accent);
+
+            color: white;
+
+            font-size: 13px;
+            font-weight: 900;
+        }
+
+        .card {
+            position: relative;
+
+            padding: 42px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(255,255,255,.025),
+                    rgba(255,255,255,0)
+                ),
+                var(--surface);
+
+            border: 1px solid var(--border);
+
+            border-radius: 20px;
+
+            text-align: center;
+
+            box-shadow:
+                0 30px 100px rgba(0,0,0,.42);
+        }
+
+        .bot-icon {
+            width: 78px;
+            height: 78px;
+
+            margin: 0 auto 25px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--accent),
+                    #6975ff
+                );
+
+            color: white;
+
+            font-size: 30px;
+            font-weight: 900;
+
+            box-shadow:
+                0 15px 40px rgba(88,101,242,.25);
+        }
+
+        .status {
+            display: inline-flex;
+            align-items: center;
+
+            gap: 7px;
+
+            margin-bottom: 13px;
+
+            padding: 5px 10px;
+
+            border-radius: 999px;
+
+            background: rgba(87,242,135,.07);
+
+            border: 1px solid rgba(87,242,135,.14);
+
+            color: #82e9a0;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: .08em;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+
+            border-radius: 50%;
+
+            background: var(--success);
+
+            box-shadow:
+                0 0 10px rgba(87,242,135,.55);
+        }
+
+        h1 {
+            margin: 0 0 12px;
+
+            font-size: 31px;
+
+            line-height: 1.15;
+
+            letter-spacing: -.045em;
+        }
+
+        .description {
+            max-width: 370px;
+
+            margin: 0 auto;
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+        .login-button {
+            width: 100%;
+
+            margin-top: 30px;
+
+            padding: 15px 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 10px;
+
+            border: 0;
+
+            border-radius: 11px;
+
+            background: var(--accent);
+
+            color: white;
+
+            font-size: 14px;
+            font-weight: 750;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 8px 25px rgba(88,101,242,.18);
+
+            transition:
+                background .2s ease,
+                transform .2s ease,
+                box-shadow .2s ease;
+        }
+
+        .login-button:hover {
+            background: var(--accent-hover);
+
+            transform: translateY(-1px);
+
+            box-shadow:
+                0 12px 30px rgba(88,101,242,.25);
+        }
+
+        .login-button:active {
+            transform: translateY(0);
+        }
+
+        .discord-icon {
+            width: 20px;
+            height: 20px;
+
+            fill: currentColor;
+        }
+
+        .permissions {
+            margin-top: 20px;
+
+            padding: 15px 16px;
+
+            text-align: left;
+
+            border-radius: 10px;
+
+            background: rgba(255,255,255,.025);
+
+            border: 1px solid rgba(255,255,255,.055);
+        }
+
+        .permissions-title {
+            margin-bottom: 8px;
+
+            color: #d9dde4;
+
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .permission {
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            color: #858d9b;
+
+            font-size: 12px;
+
+            line-height: 1.9;
+        }
+
+        .permission::before {
+            content: "✓";
+
+            color: #7f8cff;
+
+            font-weight: 800;
+        }
+
+        .legal {
+            margin-top: 22px;
+
+            color: #6f7785;
+
+            font-size: 11px;
+
+            line-height: 1.6;
+        }
+
+        .legal a {
+            color: #8c95a5;
+
+            text-decoration: none;
+        }
+
+        .legal a:hover {
+            color: white;
+
+            text-decoration: underline;
+        }
+
+        .back {
+            display: block;
+
+            margin-top: 22px;
+
+            color: #737b89;
+
+            font-size: 12px;
+
+            text-decoration: none;
+        }
+
+        .back:hover {
+            color: white;
+        }
+
+        @media (max-width: 520px) {
+
+            body {
+                padding: 16px;
+            }
+
+            .card {
+                padding: 32px 22px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <div class="brand">
+
+        <span class="brand-icon">
+            E
+        </span>
+
+        Elektrik Studios
+
+    </div>
+
+
+    <main class="card">
+
+        <div class="bot-icon">
+            S2
+        </div>
+
+
+        <div class="status">
+
+            <span class="status-dot"></span>
+
+            System Online
+
+        </div>
+
+
+        <h1>
+            System Bot 2
+        </h1>
+
+
+        <p class="description">
+            Melde dich mit deinem Discord-Account an, um
+            auf die Funktionen des Systems und das
+            zugehörige Dashboard zuzugreifen.
+        </p>
+
+
+        <button
+            class="login-button"
+            onclick="loginWithDiscord()"
+        >
+
+            <svg
+                class="discord-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+            >
+                <path d="M19.54 5.09A16.18 16.18 0 0 0 15.56 4l-.49 1a14.8 14.8 0 0 0-6.14 0l-.49-1a16.18 16.18 0 0 0-3.98 1.09C1.93 8.15 1.25 12.7 1.59 17.19A16.35 16.35 0 0 0 6.5 20l1.19-1.64c-.65-.24-1.27-.54-1.85-.9l.45-.34c3.57 1.67 7.43 1.67 10.96 0l.46.34c-.59.36-1.21.66-1.86.9L17.04 20a16.3 16.3 0 0 0 4.91-2.81c.4-5.21-.68-9.72-2.41-12.1ZM8.52 15.23c-1.07 0-1.95-.98-1.95-2.18s.86-2.19 1.95-2.19c1.1 0 1.96.99 1.95 2.19 0 1.2-.86 2.18-1.95 2.18Zm6.96 0c-1.07 0-1.95-.98-1.95-2.18s.86-2.19 1.95-2.19c1.1 0 1.96.99 1.95 2.19 0 1.2-.86 2.18-1.95 2.18Z"/>
+            </svg>
+
+            Mit Discord anmelden
+
+        </button>
+
+
+        <div class="permissions">
+
+            <div class="permissions-title">
+                Bei der Anmeldung werden angefordert
+            </div>
+
+            <div class="permission">
+                Discord-Profil
+            </div>
+
+            <div class="permission">
+                E-Mail-Adresse
+            </div>
+
+            <div class="permission">
+                Server-/Guild-Informationen
+            </div>
+
+        </div>
+
+
+        <div class="legal">
+
+            Mit der Anmeldung akzeptierst du unsere
+
+            <a href="/system2-legal/tos">
+                Terms of Service
+            </a>
+
+            und bestätigst unsere
+
+            <a href="/system2-legal/privacy">
+                Privacy Policy
+            </a>.
+
+        </div>
+
+
+        <a
+            href="/"
+            class="back"
+        >
+            ← Zurück zu Elektrik Studios
+        </a>
+
+    </main>
+
+</div>
+
+
+<script>
+    const DISCORD_OAUTH_URL =
+        "https://discord.com/oauth2/authorize" +
+        "?client_id=1475768515217588224" +
+        "&response_type=code" +
+        "&redirect_uri=" +
+        encodeURIComponent(
+            "https://elektrikerimkellersystem.netlify.app/succes"
+        ) +
+        "&integration_type=1" +
+        "&scope=" +
+        encodeURIComponent(
+            "identify email guilds applications.commands"
+        );
+
+
+    function loginWithDiscord() {
+
+        window.location.href =
+            DISCORD_OAUTH_URL;
+
+    }
+
+</script>
+
+</body>
+</html>
