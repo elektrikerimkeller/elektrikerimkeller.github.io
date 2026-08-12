@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Moderationssystem — Elektrik Studios</title>
+
+    <meta
+        name="description"
+        content="Das Moderationssystem von Elektrik Studios für Discord."
+    >
+
+    <style>
+        :root {
+            --bg: #080a0f;
+            --surface: #11141b;
+            --border: #272d39;
+            --text: #f5f7fa;
+            --muted: #9da5b3;
+            --accent: #5865f2;
+            --accent-hover: #4752c4;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 24px;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(88, 101, 242, .22),
+                    transparent 45%
+                ),
+                var(--bg);
+
+            color: var(--text);
+
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 560px;
+
+            padding: 45px;
+
+            text-align: center;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 30px 100px rgba(0, 0, 0, .4);
+        }
+
+        .icon {
+            width: 85px;
+            height: 85px;
+
+            margin: 0 auto 25px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #5865f2,
+                    #727cff
+                );
+
+            color: white;
+
+            font-size: 34px;
+            font-weight: 900;
+
+            box-shadow:
+                0 15px 40px rgba(88,101,242,.22);
+        }
+
+        .label {
+            color: #9aa7ff;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            letter-spacing: .12em;
+        }
+
+        h1 {
+            margin: 12px 0;
+
+            font-size: 36px;
+
+            line-height: 1.1;
+
+            letter-spacing: -.045em;
+        }
+
+        p {
+            color: var(--muted);
+
+            line-height: 1.7;
+        }
+
+        .features {
+            margin: 25px 0;
+
+            padding: 18px;
+
+            text-align: left;
+
+            background: rgba(255,255,255,.025);
+
+            border: 1px solid rgba(255,255,255,.05);
+
+            border-radius: 11px;
+        }
+
+        .features div {
+            margin: 8px 0;
+
+            color: #aab1bd;
+
+            font-size: 13px;
+        }
+
+        .features div::before {
+            content: "✓";
+
+            margin-right: 9px;
+
+            color: #8f9aff;
+
+            font-weight: 800;
+        }
+
+        .button {
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            padding: 15px 20px;
+
+            border-radius: 10px;
+
+            background: var(--accent);
+
+            color: white;
+
+            font-weight: 700;
+
+            text-decoration: none;
+
+            transition: .2s ease;
+        }
+
+        .button:hover {
+            background: var(--accent-hover);
+
+            transform: translateY(-1px);
+        }
+
+        .legal {
+            margin-top: 23px;
+
+            color: #6f7785;
+
+            font-size: 11px;
+
+            line-height: 1.6;
+        }
+
+        .legal a {
+            color: #858d9b;
+        }
+
+        .back {
+            display: block;
+
+            margin-top: 20px;
+
+            color: #737b89;
+
+            font-size: 13px;
+
+            text-decoration: none;
+        }
+
+        .back:hover {
+            color: white;
+        }
+
+        @media (max-width: 550px) {
+
+            .card {
+                padding: 32px 23px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+<main class="card">
+
+    <div class="icon">
+        ⚙
+    </div>
+
+    <div class="label">
+        Elektrik Studios
+    </div>
+
+    <h1>
+        Moderationssystem
+    </h1>
+
+    <p>
+        Ein modernes Moderationssystem für Discord,
+        entwickelt von Elektrik Studios.
+        Unterstütze dein Server-Team bei der Verwaltung
+        und Moderation deiner Community.
+    </p>
+
+
+    <div class="features">
+
+        <div>
+            Moderationsfunktionen
+        </div>
+
+        <div>
+            Unterstützung für Server-Teams
+        </div>
+
+        <div>
+            Zentrale Verwaltung
+        </div>
+
+        <div>
+            Für Discord-Communities entwickelt
+        </div>
+
+    </div>
+
+
+
+    <a
+        class="button"
+        href="https://discord.com/oauth2/authorize?client_id=1399766347197714533&integration_type=1&scope=applications.commands"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        Mit Discord einladen →
+    </a>
+
+
+    <div class="legal">
+
+        Mit der Nutzung gelten unsere
+        <a href="/system-legal/tos">
+            Terms of Service
+        </a>
+        und
+        <a href="/system-legal/privacy">
+            Privacy Policy
+        </a>.
+
+    </div>
+
+
+    <a
+        class="back"
+        href="/invite/"
+    >
+        ← Zurück zu allen Bots
+    </a>
+
+</main>
+
+</body>
+</html>
