@@ -367,13 +367,11 @@
 
 
 <script>
-    const CLIENT_ID =
-        "1382712901873434725";
 
+    const CLIENT_ID = "1382712901873434725";
 
     const REDIRECT_URI =
         "https://communitychills.netlify.app/auth/communitychills/callback";
-
 
     const SCOPES = [
         "identify",
@@ -384,41 +382,21 @@
 
     function loginWithDiscord() {
 
-        if (
-            CLIENT_ID ===
-            "1382712901873434725"
-        ) {
-
-            alert(
-                "Die CommunityChills Client-ID wurde noch nicht eingerichtet."
-            );
-
-            return;
-        }
-
-
         const params = new URLSearchParams({
-
             client_id: CLIENT_ID,
-
             response_type: "code",
-
             redirect_uri: REDIRECT_URI,
-
             scope: SCOPES.join(" ")
-
         });
 
 
-        const url =
+        const discordOAuthURL =
             "https://discord.com/oauth2/authorize?" +
             params.toString();
 
 
-        window.location.href = url;
-
+        window.location.href = discordOAuthURL;
     }
-
 </script>
 
 </body>
