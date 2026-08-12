@@ -1,0 +1,512 @@
+# `legal/tos/index.html`
+
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Terms of Service — System Bot</title>
+    <meta name="description" content="Terms of Service für System Bot.">
+
+    <style>
+        :root {
+            --background: #0b0d12;
+            --surface: #11141b;
+            --border: #252a35;
+            --text: #f5f7fa;
+            --muted: #a1a7b3;
+            --accent: #5865f2;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--background);
+            color: var(--text);
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+            line-height: 1.7;
+        }
+
+        a {
+            color: #9aa7ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+
+            background: rgba(11, 13, 18, .92);
+            backdrop-filter: blur(14px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            max-width: 920px;
+            margin: auto;
+            padding: 16px 24px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            color: white;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            padding: 7px 11px;
+            border-radius: 7px;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            background: var(--surface);
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            max-width: 920px;
+            margin: auto;
+            padding: 70px 24px 100px;
+        }
+
+        .hero {
+            margin-bottom: 45px;
+        }
+
+        .badge {
+            display: inline-block;
+            color: #aeb6ff;
+            background: rgba(88, 101, 242, .12);
+            border: 1px solid rgba(88, 101, 242, .25);
+            padding: 5px 11px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            margin: 0 0 12px;
+            font-size: clamp(38px, 6vw, 58px);
+            line-height: 1.1;
+            letter-spacing: -.045em;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        .updated {
+            color: #737b89;
+            font-size: 13px;
+            margin-top: 18px;
+        }
+
+        article {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            padding: 38px;
+        }
+
+        h2 {
+            margin: 42px 0 14px;
+            font-size: 24px;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        p,
+        li {
+            color: #c7cbd4;
+        }
+
+        ul {
+            padding-left: 23px;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        .notice {
+            margin: 22px 0;
+            padding: 16px 18px;
+            border-left: 3px solid var(--accent);
+            border-radius: 7px;
+            background: rgba(88, 101, 242, .08);
+        }
+
+        footer {
+            max-width: 920px;
+            margin: auto;
+            padding: 0 24px 45px;
+            color: #737b89;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        @media (max-width: 650px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            main {
+                padding-top: 42px;
+            }
+
+            article {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <a class="brand" href="/">SYSTEM BOT</a>
+
+        <div class="nav-links">
+            <a href="/legal/privacy/">Privacy</a>
+            <a href="/legal/tos/">Terms</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+    <div class="hero">
+        <span class="badge">LEGAL</span>
+
+        <h1>Terms of Service</h1>
+
+        <div class="subtitle">
+            Nutzungsbedingungen für System Bot und das zugehörige
+            Web-Dashboard.
+        </div>
+
+        <div class="updated">
+            Letzte Aktualisierung: 12. August 2026
+        </div>
+    </div>
+
+    <article>
+
+        <h2>1. Geltungsbereich</h2>
+
+        <p>
+            Diese Terms of Service („Nutzungsbedingungen“) regeln die
+            Nutzung von System Bot, einschließlich des Discord-Bots,
+            des Web-Dashboards und damit verbundener Funktionen.
+        </p>
+
+        <p>
+            Durch die Nutzung von System Bot erklärst du dich mit
+            diesen Nutzungsbedingungen einverstanden.
+        </p>
+
+
+        <h2>2. Beschreibung des Dienstes</h2>
+
+        <p>
+            System Bot stellt verschiedene Funktionen innerhalb von
+            Discord sowie über ein Web-Dashboard bereit.
+        </p>
+
+        <p>
+            Der Funktionsumfang kann jederzeit erweitert, verändert
+            oder eingestellt werden.
+        </p>
+
+
+        <h2>3. Voraussetzungen</h2>
+
+        <p>
+            Zur Nutzung bestimmter Funktionen ist eine Autorisierung
+            über Discord OAuth2 erforderlich.
+        </p>
+
+        <p>
+            Du musst zur Nutzung unseres Dienstes berechtigt sein
+            und die geltenden Gesetze sowie die Regeln von Discord
+            einhalten.
+        </p>
+
+
+        <h2>4. Discord-Autorisierung</h2>
+
+        <p>
+            Bestimmte Funktionen erfordern eine Authentifizierung
+            über Discord.
+        </p>
+
+        <p>
+            Durch die Autorisierung erlaubst du System Bot, die im
+            OAuth2-Prozess freigegebenen Daten entsprechend unserer
+            Privacy Policy zu verarbeiten.
+        </p>
+
+        <p>
+            System Bot fordert kein Discord-Passwort an.
+        </p>
+
+
+        <h2>5. Verbotene Nutzung</h2>
+
+        <p>
+            Die Nutzung des Dienstes für folgende Zwecke ist untersagt:
+        </p>
+
+        <ul>
+            <li>Verstoß gegen geltendes Recht</li>
+            <li>unbefugter Zugriff auf Accounts oder Systeme</li>
+            <li>Umgehung von Sicherheitsmechanismen</li>
+            <li>Verbreitung von Schadsoftware</li>
+            <li>Spam oder automatisierter Missbrauch</li>
+            <li>Angriffe auf unsere Infrastruktur</li>
+            <li>unbefugtes Abrufen fremder Daten</li>
+            <li>Betrug oder andere rechtswidrige Aktivitäten</li>
+        </ul>
+
+
+        <h2>6. Discord-Regeln</h2>
+
+        <p>
+            Bei der Nutzung von System Bot müssen zusätzlich die
+            jeweils geltenden Discord Terms of Service und
+            Richtlinien eingehalten werden.
+        </p>
+
+        <p>
+            Die
+            <a
+                href="https://discord.com/terms"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Discord Terms of Service
+            </a>
+            gelten unabhängig von diesen Nutzungsbedingungen.
+        </p>
+
+
+        <h2>7. Verfügbarkeit</h2>
+
+        <p>
+            Wir bemühen uns, System Bot zuverlässig verfügbar
+            zu halten.
+        </p>
+
+        <p>
+            Eine jederzeitige oder fehlerfreie Verfügbarkeit kann
+            jedoch nicht garantiert werden.
+        </p>
+
+        <p>
+            Der Dienst kann beispielsweise aufgrund von Wartung,
+            Updates, technischen Problemen, Sicherheitsmaßnahmen,
+            Discord-Ausfällen oder Ausfällen anderer Drittanbieter
+            vorübergehend nicht verfügbar sein.
+        </p>
+
+
+        <h2>8. Änderungen des Dienstes</h2>
+
+        <p>
+            Wir behalten uns vor, Funktionen hinzuzufügen, zu ändern
+            oder zu entfernen.
+        </p>
+
+        <p>
+            Dies kann insbesondere aufgrund technischer,
+            sicherheitsbezogener oder rechtlicher Anforderungen
+            erforderlich sein.
+        </p>
+
+
+        <h2>9. Sperrung und Beendigung</h2>
+
+        <p>
+            Wir können den Zugriff auf System Bot einschränken oder
+            beenden, wenn ein Nutzer:
+        </p>
+
+        <ul>
+            <li>gegen diese Terms of Service verstößt;</li>
+            <li>den Dienst missbraucht;</li>
+            <li>gegen geltendes Recht verstößt;</li>
+            <li>Sicherheitsrisiken verursacht;</li>
+            <li>den Dienst oder andere Nutzer erheblich beeinträchtigt.</li>
+        </ul>
+
+        <p>
+            Bei schwerwiegenden Verstößen kann eine sofortige
+            Sperrung erfolgen.
+        </p>
+
+
+        <h2>10. Geistiges Eigentum</h2>
+
+        <p>
+            Soweit nicht anders angegeben, gehören der Quellcode,
+            das Design, die Software, das Dashboard und sonstige
+            Bestandteile von System Bot dem Betreiber oder den
+            jeweiligen Rechteinhabern.
+        </p>
+
+        <p>
+            Eine unerlaubte Vervielfältigung, Veränderung,
+            Weiterverbreitung oder kommerzielle Nutzung ist nicht
+            gestattet.
+        </p>
+
+
+        <h2>11. Drittanbieter</h2>
+
+        <p>
+            System Bot kann Dienste und Schnittstellen von
+            Drittanbietern verwenden.
+        </p>
+
+        <p>
+            Hierzu gehört insbesondere Discord für Authentifizierung
+            und bestimmte Bot-Funktionen.
+        </p>
+
+        <p>
+            Für die dauerhafte Verfügbarkeit oder Funktionsweise
+            solcher Drittanbieterdienste können wir keine Garantie
+            übernehmen.
+        </p>
+
+
+        <h2>12. Haftung</h2>
+
+        <p>
+            Die Haftung richtet sich nach den gesetzlichen
+            Vorschriften.
+        </p>
+
+        <p>
+            Soweit gesetzlich zulässig, haften wir nicht für Schäden,
+            die ausschließlich durch Ausfälle, Änderungen oder
+            Fehlfunktionen von Drittanbietern, Fehlbedienung oder
+            Ereignisse außerhalb unseres Einflussbereichs entstehen.
+        </p>
+
+        <p>
+            Zwingende gesetzliche Haftungsbestimmungen bleiben
+            unberührt.
+        </p>
+
+
+        <h2>13. Datenschutz</h2>
+
+        <p>
+            Informationen über die Verarbeitung personenbezogener
+            Daten findest du in unserer
+            <a href="/legal/privacy/">
+                Privacy Policy
+            </a>.
+        </p>
+
+
+        <h2>14. Änderungen dieser Terms</h2>
+
+        <p>
+            Wir können diese Nutzungsbedingungen ändern, wenn dies
+            aufgrund von Änderungen des Dienstes, rechtlicher
+            Anforderungen oder anderer berechtigter Gründe erforderlich
+            ist.
+        </p>
+
+        <p>
+            Die jeweils aktuelle Version wird unter dieser URL
+            veröffentlicht.
+        </p>
+
+
+        <h2>15. Anwendbares Recht</h2>
+
+        <p>
+            Es gilt das Recht von <strong>[LAND]</strong>, soweit dem
+            keine zwingenden gesetzlichen Vorschriften entgegenstehen.
+        </p>
+
+        <p>
+            Soweit gesetzlich zulässig, ist für Streitigkeiten das
+            zuständige Gericht am Sitz des Betreibers zuständig.
+        </p>
+
+
+        <h2>16. Kontakt</h2>
+
+        <p>
+            Bei Fragen zu diesen Nutzungsbedingungen kannst du uns
+            kontaktieren:
+        </p>
+
+        <p>
+            <strong>Elektriker Im Keller</strong><br>
+            Noch nicht vorhanden (Anschrift)<br>
+            <a href="mailto:elektrikerimkellerlegal@gmail.com">
+                elektrikerimkellerlegal@gmail.com
+            </a>
+        </p>
+
+    </article>
+
+</main>
+
+<footer>
+    <p>
+        © 2026 System Bot
+    </p>
+
+    <p>
+        <a href="/legal/privacy/">Privacy Policy</a>
+        ·
+        <a href="/legal/tos/">Terms of Service</a>
+    </p>
+</footer>
+
+</body>
+</html>
+```
