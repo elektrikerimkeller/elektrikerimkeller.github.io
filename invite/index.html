@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bots einladen — Elektrik Studios</title>
+    <meta name="description" content="Lade die öffentlichen Discord Bots von Elektrik Studios auf deinen Server ein.">
+
+    <style>
+        :root {
+            --bg: #080a0f;
+            --surface: #11141b;
+            --surface-2: #161a23;
+            --border: #272d39;
+            --text: #f5f7fa;
+            --muted: #9da5b3;
+            --accent: #5865f2;
+            --accent-hover: #4752c4;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 50% -10%, rgba(88,101,242,.2), transparent 42%),
+                var(--bg);
+            color: var(--text);
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: rgba(8,10,15,.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255,255,255,.06);
+        }
+
+        nav {
+            max-width: 1050px;
+            margin: auto;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+        }
+
+        .brand-icon {
+            width: 34px;
+            height: 34px;
+            display: grid;
+            place-items: center;
+            border-radius: 10px;
+            background: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            padding: 8px 12px;
+            font-size: 14px;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover {
+            color: white;
+            background: var(--surface);
+        }
+
+        main {
+            max-width: 1050px;
+            margin: auto;
+            padding: 90px 24px 110px;
+        }
+
+        .hero {
+            text-align: center;
+            max-width: 720px;
+            margin: auto auto 55px;
+        }
+
+        .eyebrow {
+            color: #9aa7ff;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(42px, 7vw, 68px);
+            line-height: 1;
+            letter-spacing: -.055em;
+        }
+
+        .hero p {
+            margin: 22px auto 0;
+            color: var(--muted);
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .bots {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .bot {
+            padding: 30px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 17px;
+            transition: .2s ease;
+        }
+
+        .bot:hover {
+            transform: translateY(-3px);
+            background: var(--surface-2);
+            border-color: #363e4e;
+        }
+
+        .bot-icon {
+            width: 55px;
+            height: 55px;
+            display: grid;
+            place-items: center;
+            border-radius: 15px;
+            background: rgba(88,101,242,.13);
+            color: #aeb6ff;
+            font-size: 23px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .bot h2 {
+            margin: 0 0 8px;
+            font-size: 22px;
+        }
+
+        .bot p {
+            margin: 0 0 25px;
+            color: var(--muted);
+            line-height: 1.65;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 11px 17px;
+            border-radius: 9px;
+            background: var(--accent);
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            transition: .2s ease;
+        }
+
+        .button:hover {
+            background: var(--accent-hover);
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 30px 24px;
+            color: #737b89;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        @media (max-width: 700px) {
+            .bots {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            main {
+                padding-top: 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <a href="/" class="brand">
+            <span class="brand-icon">E</span>
+            Elektrik Studios
+        </a>
+
+        <div class="nav-links">
+            <a href="/system-legal/">Home</a>
+            <a href="/system-legal/privacy/">Privacy</a>
+            <a href="/system-legal/tos/">Terms</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+    <section class="hero">
+        <div class="eyebrow">Discord Bots</div>
+
+        <h1>
+            Unsere Bots.
+        </h1>
+
+        <p>
+            Entdecke die öffentlichen Discord Bots von
+            Elektrik Studios und füge sie deinem Server hinzu.
+        </p>
+    </section>
+
+    <section class="bots">
+
+        <article class="bot">
+
+            <div class="bot-icon">♪</div>
+
+            <h2>
+                Elektriker Im Keller Musik
+            </h2>
+
+            <p>
+                Ein Discord Musik-Bot für deine Community.
+                Bringe Musik und Entertainment auf deinen
+                Discord-Server.
+            </p>
+
+            <a
+                href="/invite/musikbot.html"
+                class="button"
+            >
+                Musik-Bot ansehen →
+            </a>
+
+        </article>
+
+
+        <article class="bot">
+
+            <div class="bot-icon">盾</div>
+
+            <h2>
+                Elektriker Moderation
+            </h2>
+
+            <p>
+                Ein Moderations-Bot für mehr Kontrolle,
+                Sicherheit und Ordnung auf deinem Discord-Server.
+            </p>
+
+            <a
+                href="/invite/elektrikermoderation.html"
+                class="button"
+            >
+                Moderation ansehen →
+            </a>
+
+        </article>
+
+    </section>
+
+</main>
+
+<footer>
+    © 2026 Elektrik Studios
+    ·
+    <a href="/system-legal/privacy/">Privacy Policy</a>
+    ·
+    <a href="/system-legal/tos/">Terms of Service</a>
+</footer>
+
+</body>
+</html>
